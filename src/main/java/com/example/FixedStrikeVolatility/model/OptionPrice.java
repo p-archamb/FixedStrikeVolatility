@@ -5,6 +5,10 @@ import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+/**
+ * Entity class that represents a price and underlying price for a options instrument. It is mapped to the option_prices
+ * table in the postgres database.
+ */
 @Entity
 @Table(name = "option_prices")
 public class OptionPrice {
@@ -15,6 +19,8 @@ public class OptionPrice {
     private BigDecimal underlyingPrice;
     private BigDecimal price;
     private LocalDateTime timestamp;
+
+    public OptionPrice() {}
 
     public Long getId() {
         return id;

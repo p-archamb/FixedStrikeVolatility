@@ -5,6 +5,10 @@ import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+/**
+ * Entity class that represents option greek calculations for an option instrument. It is mapped to the
+ * option_analytics table in the postgres database.
+ */
 @Entity
 @Table(name = "option_analytics")
 public class OptionAnalytics {
@@ -19,6 +23,8 @@ public class OptionAnalytics {
     private BigDecimal theta;
     private int days_to_expiration;
     private LocalDateTime timestamp;
+
+    public OptionAnalytics() {}
 
     public Long getId() {
         return id;

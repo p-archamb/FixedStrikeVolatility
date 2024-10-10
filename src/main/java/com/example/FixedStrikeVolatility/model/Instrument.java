@@ -1,8 +1,14 @@
 package com.example.FixedStrikeVolatility.model;
 
 import jakarta.persistence.*;
+
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+/**
+ * Entity class that represents an options instrument. It is mapped to the instruments
+ * table in the postgres database.
+ */
 @Entity
 @Table(name = "instruments")
 public class Instrument {
@@ -11,7 +17,11 @@ public class Instrument {
     private Long id;
     private String symbol;
     private String instrumentType;
+    @Column(name = "expiration_date")
+    private LocalDate expirationDate;
     private LocalDateTime lastUpdated;
+
+    public Instrument() {}
 
     public Long getId() {
         return id;
@@ -30,6 +40,12 @@ public class Instrument {
     }
     public void setInstrumentType(String instrumentType) {
         this.instrumentType = instrumentType;
+    }
+    public LocalDate getExpirationDate() {
+        return expirationDate;
+    }
+    public void setExpirationDate(LocalDate expirationDate) {
+        this.expirationDate = expirationDate;
     }
     public LocalDateTime getLastUpdated() {
         return lastUpdated;
