@@ -21,7 +21,7 @@ public class OptionAnalytics {
     private BigDecimal gamma;
     private BigDecimal vega;
     private BigDecimal theta;
-    private int days_to_expiration;
+    private Integer days_to_expiration;
     private LocalDateTime timestamp;
 
     public OptionAnalytics() {}

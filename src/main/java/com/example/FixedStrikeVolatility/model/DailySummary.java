@@ -40,6 +40,10 @@ public class DailySummary {
     private BigDecimal highIv;
     @Column(name = "low_iv")
     private BigDecimal lowIv;
+    @Column(name = "strike")
+    private BigDecimal strikePrice;
+    @Column(name = "option_type")
+    private Character optionType;
 
     public DailySummary() {}
 
@@ -131,5 +135,17 @@ public class DailySummary {
     }
     public void setLowIv(BigDecimal lowIv) {
         this.lowIv = lowIv;
+    }
+    public BigDecimal getStrikePrice() {
+        return strikePrice;
+    }
+    public void setStrikePrice(BigDecimal strikePrice) {
+        this.strikePrice = strikePrice;
+    }
+    public Character getOptionType() {
+        return optionType;
+    }
+    public void setOptionType(Character optionType) {
+        this.optionType = optionType;
     }
 }

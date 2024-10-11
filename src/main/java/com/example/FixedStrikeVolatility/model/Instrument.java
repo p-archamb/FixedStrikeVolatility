@@ -2,6 +2,7 @@ package com.example.FixedStrikeVolatility.model;
 
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -17,6 +18,10 @@ public class Instrument {
     private Long id;
     private String symbol;
     private String instrumentType;
+    @Column(name = "strike")
+    private BigDecimal strike;
+    @Column(name = "option_type")
+    private Character optionType;
     @Column(name = "expiration_date")
     private LocalDate expirationDate;
     private LocalDateTime lastUpdated;
@@ -40,6 +45,18 @@ public class Instrument {
     }
     public void setInstrumentType(String instrumentType) {
         this.instrumentType = instrumentType;
+    }
+    public BigDecimal getStrike() {
+        return strike;
+    }
+    public void setStrike(BigDecimal strike) {
+        this.strike = strike;
+    }
+    public Character getOptionType() {
+        return optionType;
+    }
+    public void setOptionType(Character optionType) {
+        this.optionType = optionType;
     }
     public LocalDate getExpirationDate() {
         return expirationDate;

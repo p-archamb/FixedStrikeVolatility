@@ -78,6 +78,8 @@ public class DailySummaryService {
         List<OptionAnalytics> todayOptionAnalytics = optionAnalyticsRepository.findByInstrumentIdAndTimestampBetween(instrumentId, startOfDay, endOfDay);
 
         dailySummary.setExpirationDate(instrument.getExpirationDate());
+        dailySummary.setStrikePrice(instrument.getStrike());
+        dailySummary.setOptionType((instrument.getOptionType()));
         updateDailySummary(dailySummary, todayOptionPrices, todayOptionAnalytics, latestPrice, latestAnalytics);
         dailySummaryRepository.save(dailySummary);
     }
